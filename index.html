@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bernie Olicia | Senior IT Specialist</title>
+<meta name="description" content="Bernie Olicia — Senior IT Specialist at Luckwell Solutions. Cisco-certified in network infrastructure, cybersecurity, and enterprise systems.">
+<meta property="og:title" content="Bernie Olicia | Senior IT Specialist">
+<meta property="og:description" content="Cisco-certified IT Specialist specializing in network infrastructure, cybersecurity, and enterprise systems administration.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0a121c;
+    --bg-alt: #0d1723;
+    --panel: #101c29;
+    --panel-2: #142433;
+    --border: rgba(143,176,197,0.14);
+    --border-strong: rgba(143,176,197,0.28);
+    --text: #e7eef4;
+    --text-muted: #8ea0b3;
+    --text-faint: #5c7185;
+    --accent: #4fd8c4;
+    --accent-dim: rgba(79,216,196,0.14);
+    --amber: #f2a65a;
+    --amber-dim: rgba(242,166,90,0.14);
+    --red: #ff6b6b;
+    --radius: 10px;
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+
+  html{ scroll-behavior:smooth; }
+
+  body{
+    background: var(--bg);
+    color: var(--text);
+    font-family:'Inter', sans-serif;
+    line-height:1.6;
+    background-image:
+      radial-gradient(circle at 15% 0%, rgba(79,216,196,0.06), transparent 40%),
+      radial-gradient(circle at 85% 20%, rgba(242,166,90,0.05), transparent 35%);
+  }
+
+  h1,h2,h3{ font-family:'Space Grotesk', sans-serif; letter-spacing:-0.01em; }
+
+  .mono{ font-family:'JetBrains Mono', monospace; }
+
+  a{ color:inherit; text-decoration:none; }
+
+  .wrap{ max-width:980px; margin:0 auto; padding:0 24px; }
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(10,18,28,0.85);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border);
+  }
+  nav .wrap{ display:flex; align-items:center; justify-content:space-between; height:60px; }
+  .nav-id{ font-family:'JetBrains Mono', monospace; font-size:14px; color:var(--accent); }
+  .nav-id span{ color:var(--text-faint); }
+  .nav-links{ display:flex; gap:22px; font-family:'JetBrains Mono', monospace; font-size:13px; color:var(--text-muted); }
+  .nav-links a:hover{ color:var(--accent); }
+  .nav-links a::before{ content:"$ "; color:var(--text-faint); }
+  @media (max-width:640px){ .nav-links{ display:none; } }
+
+  /* ---------- HERO ---------- */
+  .hero{ padding:80px 0 60px; }
+  .hero-grid{ display:grid; grid-template-columns:auto 1fr; gap:48px; align-items:center; }
+  @media (max-width:720px){ .hero-grid{ grid-template-columns:1fr; text-align:center; justify-items:center; } }
+
+  .headshot-ring{
+    width:172px; height:172px; border-radius:50%;
+    padding:4px;
+    background: conic-gradient(from 180deg, var(--accent), var(--amber), var(--accent));
+    box-shadow:0 0 40px rgba(79,216,196,0.18);
+    flex-shrink:0;
+  }
+  .headshot-ring img{ width:100%; height:100%; border-radius:50%; display:block; background:var(--panel); }
+
+  .status-tag{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--accent);
+    background:var(--accent-dim); border:1px solid rgba(79,216,196,0.3);
+    padding:5px 12px; border-radius:20px; margin-bottom:16px;
+  }
+  .status-dot{ width:7px; height:7px; border-radius:50%; background:var(--accent); box-shadow:0 0 8px var(--accent); animation:pulse 2s infinite; }
+  @keyframes pulse{ 0%,100%{opacity:1;} 50%{opacity:0.35;} }
+
+  .hero h1{ font-size:38px; font-weight:700; color:#fff; margin-bottom:6px; }
+  .hero .role{ font-size:17px; color:var(--accent); font-weight:500; margin-bottom:4px; }
+  .hero .meta{ font-size:14px; color:var(--text-muted); margin-bottom:22px; }
+  .hero .meta span{ color:var(--text-faint); }
+
+  .btn-row{ display:flex; gap:12px; flex-wrap:wrap; }
+  @media (max-width:720px){ .btn-row{ justify-content:center; } }
+  .btn{
+    font-family:'JetBrains Mono', monospace; font-size:13px;
+    padding:11px 20px; border-radius:8px; display:inline-flex; align-items:center; gap:8px;
+    transition:transform .15s ease, border-color .15s ease;
+  }
+  .btn:hover{ transform:translateY(-2px); }
+  .btn-primary{ background:var(--accent); color:#06181a; font-weight:600; }
+  .btn-outline{ border:1px solid var(--border-strong); color:var(--text); }
+  .btn-outline:hover{ border-color:var(--accent); color:var(--accent); }
+
+  /* ---------- TERMINAL BLOCK ---------- */
+  .terminal{
+    background:var(--panel); border:1px solid var(--border); border-radius:var(--radius);
+    overflow:hidden; margin-top:56px;
+  }
+  .terminal-bar{
+    display:flex; align-items:center; gap:7px; padding:11px 16px;
+    background:var(--panel-2); border-bottom:1px solid var(--border);
+  }
+  .tdot{ width:10px; height:10px; border-radius:50%; }
+  .tdot.r{ background:#ff5f56; } .tdot.y{ background:#ffbd2e; } .tdot.g{ background:#27c93f; }
+  .terminal-title{ margin-left:8px; font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--text-faint); }
+  .terminal-body{ padding:22px 24px; font-family:'JetBrains Mono', monospace; font-size:13.5px; color:var(--text-muted); }
+  .terminal-body .prompt{ color:var(--accent); }
+  .terminal-body .out{ color:var(--text); margin:4px 0 14px 0; }
+
+  /* ---------- SECTION DIVIDER (signature element) ---------- */
+  .divider{ display:flex; align-items:center; gap:0; padding:50px 0 10px; }
+  .divider svg{ width:100%; height:24px; display:block; }
+  .divider .node{ fill:var(--bg); stroke:var(--accent); stroke-width:2; }
+  .divider .line{ stroke:var(--border-strong); stroke-width:1.5; stroke-dasharray:4 6; }
+  @media (prefers-reduced-motion:no-preference){
+    .divider .flow{ stroke-dasharray:4 6; animation:flow 3s linear infinite; }
+  }
+  @keyframes flow{ to{ stroke-dashoffset:-40; } }
+
+  /* ---------- SECTION ---------- */
+  section{ padding:20px 0 56px; }
+  .eyebrow{ font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--amber); letter-spacing:0.06em; margin-bottom:10px; }
+  .eyebrow::before{ content:"// "; color:var(--text-faint); }
+  h2.section-title{ font-size:26px; color:#fff; margin-bottom:26px; }
+
+  /* ---------- ABOUT ---------- */
+  .about-layout{ display:grid; grid-template-columns:1.4fr 1fr; gap:36px; }
+  @media (max-width:760px){ .about-layout{ grid-template-columns:1fr; } }
+  blockquote{
+    font-family:'Space Grotesk', sans-serif; font-size:19px; color:#fff; font-weight:500;
+    border-left:2px solid var(--accent); padding-left:18px; margin-bottom:20px; line-height:1.5;
+  }
+  .about-layout p{ color:var(--text-muted); font-size:15px; }
+  .stat-panel{ background:var(--panel); border:1px solid var(--border); border-radius:var(--radius); padding:20px; }
+  .stat-row{ display:flex; justify-content:space-between; padding:11px 0; border-bottom:1px solid var(--border); font-size:13.5px; }
+  .stat-row:last-child{ border-bottom:none; }
+  .stat-row .k{ color:var(--text-faint); font-family:'JetBrains Mono', monospace; }
+  .stat-row .v{ color:var(--text); font-weight:500; text-align:right; }
+
+  /* ---------- SKILLS ---------- */
+  .skill-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px; }
+  .skill-chip{
+    background:var(--panel); border:1px solid var(--border); border-radius:8px;
+    padding:14px 16px; font-size:14px; color:var(--text); display:flex; align-items:center; gap:10px;
+    transition:border-color .15s ease;
+  }
+  .skill-chip:hover{ border-color:var(--accent); }
+  .skill-chip .dot{ width:6px; height:6px; border-radius:50%; background:var(--accent); flex-shrink:0; }
+
+  /* ---------- CREDENTIALS ---------- */
+  .cred-count{ color:var(--text-muted); font-size:14px; margin-bottom:22px; }
+  .cred-count strong{ color:var(--accent); }
+  .badge-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:14px; }
+  .badge-card{
+    background:var(--panel); border:1px solid var(--border); border-radius:var(--radius);
+    overflow:hidden; transition:transform .15s ease, border-color .15s ease;
+  }
+  .badge-card:hover{ transform:translateY(-3px); border-color:var(--border-strong); }
+  .badge-card .bc-bar{ display:flex; gap:6px; padding:9px 12px; background:var(--panel-2); border-bottom:1px solid var(--border); }
+  .badge-card .bc-bar .tdot{ width:7px; height:7px; }
+  .badge-card .bc-body{ padding:16px; display:flex; gap:12px; align-items:flex-start; }
+  .badge-card img{ width:44px; height:44px; border-radius:6px; flex-shrink:0; background:#fff; }
+  .badge-card .bc-name{ font-size:13.5px; color:var(--text); font-weight:500; line-height:1.3; margin-bottom:5px; }
+  .badge-card .bc-meta{ font-family:'JetBrains Mono', monospace; font-size:11px; color:var(--text-faint); }
+  .cred-cta{ margin-top:24px; }
+
+  /* ---------- PROJECTS ---------- */
+  .project-card{
+    background:var(--panel); border:1px solid var(--border); border-radius:var(--radius);
+    padding:24px; margin-bottom:16px;
+  }
+  .project-card .p-head{ display:flex; justify-content:space-between; align-items:flex-start; gap:16px; margin-bottom:10px; flex-wrap:wrap; }
+  .project-card h3{ font-size:17px; color:#fff; }
+  .project-tag{
+    font-family:'JetBrains Mono', monospace; font-size:11px; color:var(--amber);
+    background:var(--amber-dim); border:1px solid rgba(242,166,90,0.3);
+    padding:3px 10px; border-radius:14px; white-space:nowrap;
+  }
+  .project-card p{ color:var(--text-muted); font-size:14.5px; }
+
+  /* ---------- BEYOND ---------- */
+  .tag-cloud{ display:flex; flex-wrap:wrap; gap:10px; }
+  .tag-cloud span{
+    font-size:13.5px; color:var(--text-muted); border:1px solid var(--border);
+    padding:8px 16px; border-radius:20px;
+  }
+
+  /* ---------- CONTACT / FOOTER ---------- */
+  footer{ padding:60px 0 40px; border-top:1px solid var(--border); margin-top:20px; text-align:center; }
+  footer h2{ font-size:28px; color:#fff; margin-bottom:12px; }
+  footer p{ color:var(--text-muted); margin-bottom:26px; }
+  .foot-meta{ margin-top:34px; font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--text-faint); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="nav-id">bernie<span>@</span>olicia<span>:~$</span></div>
+    <div class="nav-links">
+      <a href="#about">about</a>
+      <a href="#skills">skills</a>
+      <a href="#credentials">credentials</a>
+      <a href="#projects">projects</a>
+      <a href="#contact">contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero wrap">
+  <div class="hero-grid">
+    <div class="headshot-ring">
+      <img src="assets/headshot.png" alt="Bernie Olicia">
+    </div>
+    <div>
+      <div class="status-tag"><span class="status-dot"></span> OPEN TO OPPORTUNITIES</div>
+      <h1>Bernie Olicia</h1>
+      <div class="role">Senior IT Specialist</div>
+      <div class="meta">Luckwell Solutions <span>·</span> Philippines <span>·</span> Cisco Certified</div>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="https://www.linkedin.com/in/bernie-olicia-43396316b/" target="_blank" rel="noopener">Connect on LinkedIn</a>
+        <a class="btn btn-outline" href="#credentials">View Credentials</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="terminal">
+    <div class="terminal-bar">
+      <span class="tdot r"></span><span class="tdot y"></span><span class="tdot g"></span>
+      <span class="terminal-title">whoami.sh</span>
+    </div>
+    <div class="terminal-body">
+      <div><span class="prompt">bernie@luckwell</span>:~$ whoami</div>
+      <div class="out">Senior IT Specialist — network infrastructure &amp; cybersecurity</div>
+      <div><span class="prompt">bernie@luckwell</span>:~$ uptime --experience</div>
+      <div class="out">8+ years, basic troubleshooting → enterprise architecture</div>
+      <div><span class="prompt">bernie@luckwell</span>:~$ cat certifications.count</div>
+      <div class="out">13 Cisco credentials — networking, cybersecurity, IoT</div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="divider">
+    <svg viewBox="0 0 980 24" preserveAspectRatio="none">
+      <line class="line flow" x1="0" y1="12" x2="980" y2="12"/>
+      <circle class="node" cx="12" cy="12" r="5"/>
+      <circle class="node" cx="490" cy="12" r="5"/>
+      <circle class="node" cx="968" cy="12" r="5"/>
+    </svg>
+  </div>
+</div>
+
+<section id="about" class="wrap">
+  <div class="eyebrow">about</div>
+  <h2 class="section-title">Making broken systems better</h2>
+  <div class="about-layout">
+    <div>
+      <blockquote>"I've always been driven by the challenge of taking a broken or inefficient system and making it better, faster, and more secure than it was before."</blockquote>
+      <p>With over 8 years of experience, I've evolved from basic troubleshooting to architecting secure enterprise environments. Currently a Senior IT Specialist at Luckwell Solutions, I bridge the gap between complex infrastructure and business growth — keeping networks fast, systems secure, and downtime rare.</p>
+    </div>
+    <div class="stat-panel">
+      <div class="stat-row"><span class="k">role</span><span class="v">Senior IT Specialist</span></div>
+      <div class="stat-row"><span class="k">company</span><span class="v">Luckwell Solutions</span></div>
+      <div class="stat-row"><span class="k">experience</span><span class="v">8+ years</span></div>
+      <div class="stat-row"><span class="k">certifications</span><span class="v">13 (Cisco)</span></div>
+      <div class="stat-row"><span class="k">education</span><span class="v">University of Rizal System</span></div>
+      <div class="stat-row"><span class="k">location</span><span class="v">Philippines</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="divider">
+    <svg viewBox="0 0 980 24" preserveAspectRatio="none">
+      <line class="line flow" x1="0" y1="12" x2="980" y2="12"/>
+      <circle class="node" cx="12" cy="12" r="5"/>
+      <circle class="node" cx="490" cy="12" r="5"/>
+      <circle class="node" cx="968" cy="12" r="5"/>
+    </svg>
+  </div>
+</div>
+
+<section id="skills" class="wrap">
+  <div class="eyebrow">technical arsenal</div>
+  <h2 class="section-title">Tools of the trade</h2>
+  <div class="skill-grid">
+    <div class="skill-chip"><span class="dot"></span> Sophos XG / Firewall</div>
+    <div class="skill-chip"><span class="dot"></span> Active Directory</div>
+    <div class="skill-chip"><span class="dot"></span> Cisco CyberOps</div>
+    <div class="skill-chip"><span class="dot"></span> PowerShell Scripting</div>
+    <div class="skill-chip"><span class="dot"></span> Network Relocation &amp; Design</div>
+    <div class="skill-chip"><span class="dot"></span> Server Administration</div>
+    <div class="skill-chip"><span class="dot"></span> Threat &amp; Endpoint Security</div>
+    <div class="skill-chip"><span class="dot"></span> IoT &amp; Network Defense</div>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="divider">
+    <svg viewBox="0 0 980 24" preserveAspectRatio="none">
+      <line class="line flow" x1="0" y1="12" x2="980" y2="12"/>
+      <circle class="node" cx="12" cy="12" r="5"/>
+      <circle class="node" cx="490" cy="12" r="5"/>
+      <circle class="node" cx="968" cy="12" r="5"/>
+    </svg>
+  </div>
+</div>
+
+<section id="credentials" class="wrap">
+  <div class="eyebrow">verified credentials</div>
+  <h2 class="section-title">Cisco Certifications</h2>
+  <div class="cred-count"><strong>13</strong> badges verified on Credly</div>
+  <div class="badge-grid">
+
+    <div class="badge-card">
+      <div class="bc-bar"><span class="tdot r"></span><span class="tdot y"></span><span class="tdot g"></span></div>
+      <div class="bc-body">
+        <img src="assets/badges/junior-cybersecurity-analyst.png" alt="Junior Cybersecurity Analyst Career Path badge">
+        <div><div class="bc-name">Junior Cybersecurity Analyst Career Path</div><div class="bc-meta">Cisco · Sep 2024</div></div>
+      </div>
+    </div>
+
+    <div class="badge-card">
+      <div class="bc-bar"><span class="tdot r"></span><span class="tdot y"></span><span class="tdot g"></span></div>
+      <div class="bc-body">
+        <img src="assets/badges/network-defense.png" alt="Network Defense badge">
+        <div><div class="bc-name">Network Defense</div><div class="bc-meta">Cisco · Sep 2024</div></div>
+      </div>
+    </div>
+
+    <div class="badge-card">
+      <div class="bc-bar"><span class="tdot r"></span><span class="tdot y"></span><span class="tdot g"></span></div>
+      <div class="bc-body">
+        <img src="assets/badges/endpoint-security.png" alt="Endpoint Security badge">
+        <div><div class="bc-name">Endpoint Security</div><div class="bc-meta">Cisco · Jun 2024</div></div>
+      </div>
+    </div>
+
+    <div class="badge-card">
+      <div class="bc-bar"><span class="tdot r"></span><span class="tdot y"></span><span class="tdot g"></span></div>
+      <div class="bc-body">
+        <img src="assets/badges/networking-devices-config.png" alt="Networking Devices and Initial Configuration badge">
+        <div><div class="bc-name">Networking Devices &amp; Initial Configuration</div><div class="bc-meta">Cisco · Jun 2024</div></div>
+      </div>
+    </div>
+
+    <div class="badge-card">
+      <div class="bc-bar"><span class="tdot r"></span><span class="tdot y"></span><span class="tdot g"></span></div>
+      <div class="bc-body">
+        <img src="assets/badges/networking-basics.png" alt="Networking Basics badge">
+        <div><div class="bc-name">Networking Basics</div><div class="bc-meta">Cisco · Jun 2024</div></div>
+      </div>
+    </div>
+
+    <div class="badge-card">
+      <div class="bc-bar"><span class="tdot r"></span><span class="tdot y"></span><span class="tdot g"></span></div>
+      <div class="bc-body">
+        <img src="assets/badges/english-for-it-2.png" alt="English for IT 2 badge">
+        <div><div class="bc-name">English for IT 2</div><div class="bc-meta">Cisco · May 2024</div></div>
+      </div>
+    </div>
+
+    <div class="badge-card">
+      <div class="bc-bar"><span class="tdot r"></span><span class="tdot y"></span><span class="tdot g"></span></div>
+      <div class="bc-body">
+        <img src="assets/badges/english-for-it-1.png" alt="English for IT 1 badge">
+        <div><div class="bc-name">English for IT 1</div><div class="bc-meta">Cisco · May 2024</div></div>
+      </div>
+    </div>
+
+    <div class="badge-card">
+      <div class="bc-bar"><span class="tdot r"></span><span class="tdot y"></span><span class="tdot g"></span></div>
+      <div class="bc-body">
+        <img src="assets/badges/intro-cybersecurity.png" alt="Introduction to Cybersecurity badge">
+        <div><div class="bc-name">Introduction to Cybersecurity</div><div class="bc-meta">Cisco · Jan 2024</div></div>
+      </div>
+    </div>
+
+    <div class="badge-card">
+      <div class="bc-bar"><span class="tdot r"></span><span class="tdot y"></span><span class="tdot g"></span></div>
+      <div class="bc-body">
+        <img src="assets/badges/network-addressing-troubleshooting.png" alt="Network Addressing and Basic Troubleshooting badge">
+        <div><div class="bc-name">Network Addressing &amp; Basic Troubleshooting</div><div class="bc-meta">Cisco · Dec 2023</div></div>
+      </div>
+    </div>
+
+    <div class="badge-card">
+      <div class="bc-bar"><span class="tdot r"></span><span class="tdot y"></span><span class="tdot g"></span></div>
+      <div class="bc-body">
+        <img src="assets/badges/cyber-threat-management.png" alt="Cyber Threat Management badge">
+        <div><div class="bc-name">Cyber Threat Management</div><div class="bc-meta">Cisco · Aug 2023</div></div>
+      </div>
+    </div>
+
+    <div class="badge-card">
+      <div class="bc-bar"><span class="tdot r"></span><span class="tdot y"></span><span class="tdot g"></span></div>
+      <div class="bc-body">
+        <img src="assets/badges/computer-hardware-basics.png" alt="Computer Hardware Basics badge">
+        <div><div class="bc-name">Computer Hardware Basics</div><div class="bc-meta">Cisco · Jun 2023</div></div>
+      </div>
+    </div>
+
+    <div class="badge-card">
+      <div class="bc-bar"><span class="tdot r"></span><span class="tdot y"></span><span class="tdot g"></span></div>
+      <div class="bc-body">
+        <img src="assets/badges/intro-iot.png" alt="Introduction to IoT badge">
+        <div><div class="bc-name">Introduction to IoT</div><div class="bc-meta">Cisco · May 2023</div></div>
+      </div>
+    </div>
+
+    <div class="badge-card">
+      <div class="bc-bar"><span class="tdot r"></span><span class="tdot y"></span><span class="tdot g"></span></div>
+      <div class="bc-body">
+        <img src="assets/badges/operating-systems-basics.png" alt="Operating Systems Basics badge">
+        <div><div class="bc-name">Operating Systems Basics</div><div class="bc-meta">Cisco</div></div>
+      </div>
+    </div>
+
+  </div>
+  <div class="cred-cta">
+    <a class="btn btn-outline" href="https://www.credly.com/users/bernie-olicia" target="_blank" rel="noopener">View all badges on Credly →</a>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="divider">
+    <svg viewBox="0 0 980 24" preserveAspectRatio="none">
+      <line class="line flow" x1="0" y1="12" x2="980" y2="12"/>
+      <circle class="node" cx="12" cy="12" r="5"/>
+      <circle class="node" cx="490" cy="12" r="5"/>
+      <circle class="node" cx="968" cy="12" r="5"/>
+    </svg>
+  </div>
+</div>
+
+<section id="projects" class="wrap">
+  <div class="eyebrow">featured projects</div>
+  <h2 class="section-title">Recent work</h2>
+
+  <div class="project-card">
+    <div class="p-head">
+      <h3>Enterprise Network Relocation</h3>
+      <span class="project-tag">infrastructure</span>
+    </div>
+    <p>Led the hardware migration and Wi-Fi infrastructure setup between municipal sites (Antipolo to Tanay), ensuring seamless connectivity and zero downtime throughout the transition.</p>
+  </div>
+
+  <div class="project-card">
+    <div class="p-head">
+      <h3>Automated Infrastructure</h3>
+      <span class="project-tag">automation</span>
+    </div>
+    <p>Developed custom PowerShell scripts for DHCP mapping and event log monitoring, reducing manual troubleshooting time by 40%.</p>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="divider">
+    <svg viewBox="0 0 980 24" preserveAspectRatio="none">
+      <line class="line flow" x1="0" y1="12" x2="980" y2="12"/>
+      <circle class="node" cx="12" cy="12" r="5"/>
+      <circle class="node" cx="490" cy="12" r="5"/>
+      <circle class="node" cx="968" cy="12" r="5"/>
+    </svg>
+  </div>
+</div>
+
+<section class="wrap">
+  <div class="eyebrow">beyond the screen</div>
+  <h2 class="section-title">Discipline in one area fuels success in others</h2>
+  <div class="tag-cloud">
+    <span>Martial Arts</span>
+    <span>Bass Guitar</span>
+    <span>Motorcycle Customization</span>
+    <span>Basketball</span>
+    <span>AI Image Generation</span>
+  </div>
+</section>
+
+<footer id="contact" class="wrap">
+  <h2>Let's build something reliable.</h2>
+  <p>Open to new opportunities — reach out on LinkedIn.</p>
+  <a class="btn btn-primary" href="https://www.linkedin.com/in/bernie-olicia-43396316b/" target="_blank" rel="noopener">Connect on LinkedIn</a>
+  <div class="foot-meta">bernie@luckwell:~$ exit</div>
+</footer>
+
+</body>
+</html>
